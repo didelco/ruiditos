@@ -22,9 +22,17 @@
 </div>
 
 <p>MIT license @ 2015 by didelco</p>
-  <script src="js/jquery.js" type="text/javascript" charset="utf-8" ></script>
-  <script src="js/jquery-ui.js" type="text/javascript" charset="utf-8" ></script>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8" ></script>
+	<script src="js/jquery-ui.js" type="text/javascript" charset="utf-8" ></script>
   <script src="js/my.js" type="text/javascript" charset="utf-8" ></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+	  var socket = io.connect('http://localhost');
+	  socket.on('news', function (data) {
+	    console.log(data);
+	    socket.emit('my other event', { my: 'data' });
+	  });
+</script>
 </body>
 
 </html>

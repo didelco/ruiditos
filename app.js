@@ -5,8 +5,8 @@ var howler = require('howler');
 var favicon = require('serve-favicon');
 var routes = require('./routes/index');
 var app = express();
-//var server = require('http').Server(app);
-//var io = require('socket.io')(server);
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 
 //view engine setup
@@ -26,27 +26,20 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
-
-// production error handler
-// no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
-        error: {}
+        error: err
     });
 });
 
 app.listen(3000);
+
+//socket.io
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});

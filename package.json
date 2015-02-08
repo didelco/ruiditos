@@ -1,0 +1,35 @@
+{
+  "name": "ruiditos",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "socket.io": "*",
+    "howler": "*",
+    "stylus": "*",
+    "nib": "*"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "A ambient sound generator",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/didelco/ruiditos.git"
+  },
+  "keywords": [
+    "nodejs",
+    "sound",
+    "howler.js",
+    "html5"
+  ],
+  "author": "Chema Diez del Corral",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/didelco/ruiditos/issues"
+  },
+  "homepage": "https://github.com/didelco/ruiditos"
+}

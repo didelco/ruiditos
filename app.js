@@ -1,18 +1,12 @@
 var express = require('express');
-var jade = require('jade');
+//var jade = require('jade');
 var path = require('path');
 var howler = require('howler');
 var favicon = require('serve-favicon');
 var routes = require('./routes/index');
-
 var app = express();
 //var server = require('http').Server(app);
 //var io = require('socket.io')(server);
-
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(express.static(path.join(__dirname, 'public')));

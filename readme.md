@@ -1,6 +1,6 @@
 #Ruiditos
 
-Ruiditos is another clone of [Noisli](http://noisli.com) for raspberry pi, both phisical and mobile controlled interface.
+Ruiditos is another clone of [Noisli](http://noisli.com) now for raspberry pi, with phisical and mobile interface.
 
 ## Code:
 
